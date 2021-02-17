@@ -41,7 +41,7 @@ const AddBookISBNForm: React.FunctionComponent<Props> = (props) => {
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const inputIsbn = search.trim().replace('-', '').replace(' ', '');
+    const inputIsbn = search.replace(/[- ]/g, '');
     const isbn = /^\d{10}$|^\d{9}X$|^978\d{10}$|^979\d{10}$/.exec(inputIsbn)?.[0] || null;
     
     if (isbn) {
