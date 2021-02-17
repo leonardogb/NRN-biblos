@@ -88,7 +88,7 @@ export const addBookISBN = async (
       error: true,
       message:
         process.env.NEXT_PUBLIC_APP_STAGE === 'production'
-          ? undefined
+          ? 'Book not found'
           : e.message,
     });
   }
