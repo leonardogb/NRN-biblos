@@ -37,7 +37,7 @@ on:
   push: # Triggers on each pushed commit
     branches:
       - 'master'
-      - 'main'
+      - 'main' # The default branch
       - 'v2-mst-aptd-at-lcz-sty' # XXX Name of the NRN preset branch, acting as a main branch (all commits pushed to the preset branch are deployed to production)
 
     # Runs the deployment workflow only when there are changes made to specific files, in any of the below paths
