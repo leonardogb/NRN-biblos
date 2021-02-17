@@ -129,7 +129,7 @@ export const getStaticProps: GetStaticProps<SSGPageProps, CommonServerSideParams
         props: {
           book: airBook?.fields || null,
         },
-        revalidate: 480,
+        revalidate: 30,
       });
       return authorsPageProps;
     } else {
