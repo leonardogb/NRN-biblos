@@ -68,7 +68,7 @@ export const getCoreServerSideProps: GetServerSideProps<GetCoreServerSidePropsRe
   const userSession: UserSemiPersistentSession = cookiesManager.getUserData();
   const { headers }: IncomingMessage = req;
   const publicHeaders: PublicHeaders = {
-    'accept-language': headers?.['accept-language'],
+    'accept-language': headers?.['accept-language'] || null,
     'user-agent': headers?.['user-agent'],
     'host': headers?.host,
   };

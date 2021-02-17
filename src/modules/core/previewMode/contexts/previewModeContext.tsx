@@ -16,6 +16,9 @@ export type PreviewModeContext = {
  * @see https://reactjs.org/docs/context.html
  * @see https://medium.com/better-programming/react-hooks-usecontext-30eb560999f for useContext hook example (open in anonymous browser #paywall)
  */
-export const previewModeContext = React.createContext<PreviewModeContext>(null);
+export const previewModeContext = React.createContext<PreviewModeContext>({
+  isPreviewModeEnabled: false,
+  previewData: {}
+});
 
 export default previewModeContext;

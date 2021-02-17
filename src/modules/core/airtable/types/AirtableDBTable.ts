@@ -4,7 +4,8 @@
  * Should use the singular form in most cases.
  */
 export type AirtableDBTable =
-  'Asset'
+  'Books'
+  | 'Authors'
+  | 'Readers'
   | 'Customer'
-  | 'Product'
   | 'Theme';

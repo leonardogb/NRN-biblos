@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "nrn-v2-mst-aptd-at-lcz-sty-c2",
-  "scope": "team_qnVfSEVc2WwmOE1OYhZr4VST",
   "env": {},
   "build": {
     "env": {
@@ -19,7 +18,7 @@
     }
   },
   "regions": [
-    "all"
+    "cdg1"
   ],
   "public": false
 }

@@ -7,6 +7,27 @@ export type Props = {
    * @default white
    */
   fill?: string;
+
+  /**
+   * Class to add
+   * 
+   * @default ''
+   */
+  className?: string;
+
+  /**
+   * width
+   * 
+   * @default 20px
+   */
+  width?: string;
+
+  /**
+   * Margin-left
+   * 
+   * @default 0
+   */
+  marginLeft?: string
 };
 
 /**
@@ -18,20 +39,29 @@ export type Props = {
  * @see https://animate.style
  */
 const Animated3Dots = (props: Props): JSX.Element => {
+  
+  const {
+    fill = 'white',
+    className = '',
+    width = '20px',
+    marginLeft = 0
+  } = props;
+
   return (
     <svg
       id="AnimatedBubble_svg__Calque_1"
       x={0}
       y={0}
       viewBox="0 0 19 5"
-      width="20px"
+      width={width}
       style={{
         overflow: 'visible',
         paddingTop: 5,
-        marginLeft: 5,
+        marginLeft: marginLeft,
       }}
       xmlSpace="preserve"
       fill={'white'}
+      className={className}
       {...props}
     >
       <circle

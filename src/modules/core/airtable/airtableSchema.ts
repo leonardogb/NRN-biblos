@@ -26,6 +26,37 @@ type Props = {}
 export const getAirtableSchema = (props?: Props): AirtableSchema => {
 
   return {
+    Books: {
+      fields: {
+        title: {},
+        author: {
+          relationship: {
+            table: 'Authors'
+          }
+        },
+        coverPhoto: {},
+        synopsis: {},
+        bought: {},
+        read: {},
+        personalRating: {},
+        personalNotes: {},
+        ISBN10: {},
+        ISBN13: {},
+        openlibrary: {},
+        publishers: {},
+        publish_date: {},
+        number_of_pages: {}
+      }
+    },
+    Authors: {
+      fields: {
+        name: {},
+        photos: {},
+        bio: {},
+        books: {},
+        openlibrary_key: {},
+      }
+    },
     Customer: {
       filterByFormula: `{ref} = '${process.env.NEXT_PUBLIC_CUSTOMER_REF}'`,
       fields: {
@@ -46,9 +77,9 @@ export const getAirtableSchema = (props?: Props): AirtableSchema => {
             asSingleRecord: true,
           },
         },
-        products: {
+        books: {
           relationship: {
-            table: 'Product',
+            table: 'Books',
           },
         },
         serviceLabel: {},
@@ -60,30 +91,30 @@ export const getAirtableSchema = (props?: Props): AirtableSchema => {
         },
       },
     },
-    Product: {
-      filterByFormula: `{customerOwnerRef} = '${process.env.NEXT_PUBLIC_CUSTOMER_REF}'`,
-      fields: {
-        // id: {},
-        ref: {},
-        title: {
-          isI18n: true,
-        },
-        images: {},
-        imagesTitle: {
-          consolidations: {
-            transformConsolidatedValue: (props: GenericPostConsolidationTransformationValueInputProps): string[] => {
-              const { sanitizedRecord: product } = props;
-              return product?.imagesTitle?.split(', ') || [];
-            },
-          },
-        },
-        description: {
-          isI18n: true,
-        },
-        price: {},
-        status: {},
-      },
-    },
+    // Product: {
+    //   filterByFormula: `{customerOwnerRef} = '${process.env.NEXT_PUBLIC_CUSTOMER_REF}'`,
+    //   fields: {
+    //     // id: {},
+    //     ref: {},
+    //     title: {
+    //       isI18n: true,
+    //     },
+    //     images: {},
+    //     imagesTitle: {
+    //       consolidations: {
+    //         transformConsolidatedValue: (props: GenericPostConsolidationTransformationValueInputProps): string[] => {
+    //           const { sanitizedRecord: product } = props;
+    //           return product?.imagesTitle?.split(', ') || [];
+    //         },
+    //       },
+    //     },
+    //     description: {
+    //       isI18n: true,
+    //     },
+    //     price: {},
+    //     status: {},
+    //   },
+    // },
     Theme: { // XXX Theme default values are handled through initCustomerTheme
       filterByFormula: `{customerOwnerRef} = '${process.env.NEXT_PUBLIC_CUSTOMER_REF}'`,
       fields: {

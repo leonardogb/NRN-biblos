@@ -176,7 +176,18 @@ const Nav: React.FunctionComponent<Props> = () => {
             </NavItem>
 
             <NavItem>
-
+              <I18nLink
+                href={`/authorsSSG`}
+                wrapChildrenAsLink={false}
+              >
+                <NavLink
+                  id={'nav-link-authors'}
+                  active={isActive(router, 'authorsSSG')}
+                >
+                  <FontAwesomeIcon icon={['fas', 'feather-alt']} />
+                  {t('nav.authors.link', 'Authors')}
+                </NavLink>
+              </I18nLink>
             </NavItem>
           </NavStrap>
         </Navbar>

@@ -4,6 +4,7 @@ import { Markdown } from './Markdown';
 import { AirtableRecord } from './AirtableRecord';
 import { Product } from './Product';
 import { Theme } from './Theme';
+import { Book } from './Book';
 
 /**
  * Sanitized Customer Airtable record.
@@ -29,4 +30,5 @@ export type Customer = {
   privacyDescription?: I18nMarkdown;
   privacyDescriptionEN?: Markdown;
   privacyDescriptionFR?: Markdown;
+  books?: AirtableRecord<Book>[];
 };

@@ -12,4 +12,5 @@ import { ParsedUrlQuery } from 'querystring';
 export type CommonServerSideParams<E extends ParsedUrlQuery = ParsedUrlQuery> = {
   albumId?: string; // Used by album-[albumId]-with-ssg-and-fallback page
   locale?: string; // The first path of the url is the "locale"
+  bookId?: string; // Used by book/[bookId] page
 } & E;

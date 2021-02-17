@@ -62,6 +62,8 @@ const TermsPage: NextPage<Props> = (props): JSX.Element => {
     termsDescription,
     serviceLabel,
   } = customer || {};
+  console.log(termsDescription);
+  
 
   // Replace dynamic values (like "{customerLabel}") by their actual value
   const terms = replaceAllOccurrences(termsDescription, {

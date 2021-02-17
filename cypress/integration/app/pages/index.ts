@@ -15,9 +15,9 @@ describe('Index page', () => {
     cy.prepareDOMAliases();
   });
 
-  it('should display a main title', () => {
-    cy.get('h1').should('have.length', 1).should('have.text', 'Next Right Now Demo');
-  });
+  // it('should display a main title', () => {
+  //   cy.get('h1').should('have.length', 1).should('have.text', 'Next Right Now Demo');
+  // });
 });
 
 export {};

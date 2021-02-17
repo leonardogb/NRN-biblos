@@ -19,6 +19,7 @@ import {
   faQuestionCircle,
   faSync,
   faUserCog,
+  faFeatherAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 // See https://github.com/FortAwesome/react-fontawesome#integrating-with-other-tools-and-frameworks
@@ -62,5 +63,6 @@ library.add(
   faQuestionCircle,
   faSync,
   faUserCog,
+  faFeatherAlt,
 )
 ;
