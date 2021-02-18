@@ -233,7 +233,7 @@ const bookInfoPage: NextPage<Props> = (props): JSX.Element => {
             <CardText className="isbn">
               {book.ISBN10 && <span><strong>ISBN 10: </strong>{book.ISBN10}</span>}
               {book.ISBN13 && <span><strong>ISBN 13: </strong>{book.ISBN13}</span>}
-              {book.openlibrary && <span><strong>ISBN 13: </strong>{book.openlibrary}</span>}
+              {book.openlibrary && <span><strong>Open Library ID: </strong>{book.openlibrary}</span>}
             </CardText>
             <CardText>
               <span>Publisher{book.publish_date && ` in ${book.publish_date}`}{book.publish_date && ` by ${book.publishers}`}</span>

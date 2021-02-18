@@ -13,7 +13,10 @@ export const addBookISBN = async (
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> => {
-  try {
+  try {    
+    if (!process.env.CUSTOMER_AIRTABLE_ID) {
+      throw new Error('CUSTOMER_AIRTABLE_ID is required');
+    }
     configureReq(req, { fileLabel });
     const { isbn } = JSON.parse(req.body);
     if (!isbn) {
@@ -45,9 +48,9 @@ export const addBookISBN = async (
         }
       ],
       synopsis: bookDetails?.description || '',
-      customer: [
-        process.env.NEXT_PUBLIC_CUSTOMER_AIRTABLE_ID || ''
-      ],
+      customer: process.env.CUSTOMER_AIRTABLE_ID ? [
+        process.env.CUSTOMER_AIRTABLE_ID
+        ] : [],
       ISBN10: bookDetails?.identifiers?.isbn_10?.[0] || '',
       ISBN13: bookDetails?.identifiers?.isbn_13?.[0] || '',
       openlibrary: bookDetails?.identifiers?.openlibrary?.[0] || '',
